@@ -1,4 +1,4 @@
-/* eslint-disable import/no-cycle */
+
 import { optionsAtom } from "./options.atom";
 import {
   useOptions,
