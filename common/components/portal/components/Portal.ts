@@ -5,7 +5,7 @@ export interface IPortalProps {
   children: JSX.Element | JSX.Element[];
 }
 
-export function Portal({ children }: IPortalProps) {
+export default function Portal({ children }: IPortalProps) {
   const [portal, setPortal] = React.useState<HTMLElement>();
 
   React.useEffect(() => {

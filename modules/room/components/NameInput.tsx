@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { socket } from "@/common/lib/socket";
 import { useModal } from "@/common/recoil/modal";
 import { useSetRoomId } from "@/common/recoil/room";
-import NotFoundModal from "@/modules/home/modals/NotFound";
+import { NotFoundModal } from "@/modules/home/modals/NotFound";
 
 const NameInput = () => {
   const setRoomId = useSetRoomId();

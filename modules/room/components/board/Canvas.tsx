@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { BsArrowsMove } from "react-icons/bs";
 
 import { CANVAS_SIZE } from "@/common/constants/canvasSize";
-
 import { socket } from "@/common/lib/socket";
 
 import { useBoardPosition } from "../../hooks/useBoardPosition";
@@ -12,14 +11,14 @@ import { useCtx } from "../../hooks/useCtx";
 import { useDraw } from "../../hooks/useDraw";
 import { useMovesHandlers } from "../../hooks/useMovesHandlers";
 import { useRefs } from "../../hooks/useRefs";
-
 import Background from "./Background";
 import MiniMap from "./Minimap";
 import useSocketDraw from "../../hooks/useSocketDraw";
+import { useViewPortSize } from "@/common/hooks/useViewportSize";
 
 const Canvas = () => {
   const { canvasRef, bgRef, undoRef, redoRef } = useRefs();
-  const { width, height } = useViewportSize();
+  const { width, height } = useViewPortSize();
   const { x, y } = useBoardPosition();
   const ctx = useCtx();
 
@@ -119,7 +118,3 @@ const Canvas = () => {
 };
 
 export default Canvas;
-function useViewportSize(): { width: any; height: any; } {
-    throw new Error("Function not implemented.");
-}
-

@@ -1,16 +1,11 @@
 /* @tailwind
 Use the @tailwind directive to insert Tailwind’s base, components, utilities and variants styles into your CSS. */
 
-
-
 /* Use the @layer directive to tell Tailwind which “bucket” a set of custom styles belong to. Valid layers are base, components, and utilities. */
-
 
 /* Tailwind will automatically move the CSS within any @layer directive to the same place as the corresponding @tailwind rule, so you don’t have to worry about authoring your CSS in a specific order to avoid specificity issues.
 
 Any custom CSS added to a layer will only be included in the final build if that CSS is actually used in your HTML, just like all of the classes built in to Tailwind by default. */
-
-
 
 @tailwind base;
 @tailwind components;
@@ -71,7 +66,7 @@ html {
   z-index: 1;
 }
 
-input[type='range']::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 1.2rem;
   width: 1.2rem;
@@ -81,7 +76,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 /* All the same stuff for Firefox */
-input[type='range']::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   height: 1.2rem;
   width: 1.2rem;
   border-radius: 50%;
@@ -90,7 +85,7 @@ input[type='range']::-moz-range-thumb {
 }
 
 /* All the same stuff for IE */
-input[type='range']::-ms-thumb {
+input[type="range"]::-ms-thumb {
   height: 1.2rem;
   width: 1.2rem;
   border-radius: 50%;

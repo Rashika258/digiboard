@@ -3,6 +3,7 @@ import { useModal } from "@/common/recoil/modal";
 import { useSetRoomId } from "@/common/recoil/room";
 import { useRouter } from "next/router";
 import * as React from "react";
+import { NotFoundModal } from "../modals/NotFound";
 
 export interface IHomeProps {}
 

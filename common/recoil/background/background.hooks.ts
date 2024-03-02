@@ -18,17 +18,15 @@ export const useBackground = () => {
   return bg;
 };
 
+export const useSetBackground = () => {
+  const setBg = useSetRecoilState(backgroundAtom);
 
-export const useSetBackground = () =>{
-    const setBg = useSetRecoilState(backgroundAtom);
+  const setBackground = (mode: "dark" | "light", lines: boolean) => {
+    setBg({
+      mode,
+      lines,
+    });
+  };
 
-
-    const setBackground = (mode: "dark" | "light", lines: boolean) =>{
-        setBg({
-            mode, 
-            lines
-        })
-    }
-
-    return setBackground
-}
+  return setBackground;
+};
