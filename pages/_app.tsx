@@ -6,7 +6,7 @@ import { RecoilRoot } from "recoil";
 
 
 import "react-toastify/dist/ReactToastify.min.css";
-import { ModalManager } from "@/common/components/modal/components/ModalManager";
+import ModalManager from "@/common/components/modal/components/ModalManager";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

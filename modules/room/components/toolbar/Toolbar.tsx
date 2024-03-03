@@ -9,23 +9,24 @@ import { IoIosShareAlt } from "react-icons/io";
 
 import { CANVAS_SIZE } from "@/common/constants/canvasSize";
 import { DEFAULT_EASE } from "@/common/constants/easings";
-import { useViewportSize } from "@/common/hooks/useViewportSize";
 import { useModal } from "@/common/recoil/modal";
 
 import { useRefs } from "../../hooks/useRefs";
 import ShareModal from "../../modals/ShareModal";
-import BackgroundPicker from "./BackgoundPicker";
+
 import ColorPicker from "./ColorPicker";
 import HistoryBtns from "./HistoryBtns";
 import ImagePicker from "./ImagePicker";
 import LineWidthPicker from "./LineWidthPicker";
 import ModePicker from "./ModePicker";
 import ShapeSelector from "./ShapeSelector";
+import BackgroundPicker from "./BackgroundPicker";
+import { useViewPortSize } from "@/common/hooks/useViewportSize";
 
 const ToolBar = () => {
   const { canvasRef, bgRef } = useRefs();
   const { openModal } = useModal();
-  const { width } = useViewportSize();
+  const { width } = useViewPortSize();
 
   const [opened, setOpened] = useState(false);
 

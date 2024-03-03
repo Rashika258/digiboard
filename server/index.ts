@@ -62,6 +62,7 @@ nextApp.prepare().then(async () => {
     };
 
     socket.on("create_room", (username) => {
+      debugger
       let roomId: string;
       do {
         roomId = Math.random().toString(36).substring(2, 6);

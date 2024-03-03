@@ -1,38 +1,42 @@
+import { FormEvent, useEffect, useState } from "react";
+
+import { useRouter } from "next/router";
+
 import { socket } from "@/common/lib/socket";
 import { useModal } from "@/common/recoil/modal";
 import { useSetRoomId } from "@/common/recoil/room";
-import { useRouter } from "next/router";
-import * as React from "react";
 import { NotFoundModal } from "../modals/NotFound";
 
-export interface IHomeProps {}
 
-export function Home(props: IHomeProps) {
+
+const Home = () => {
   const { openModal } = useModal();
-  const router = useRouter();
   const setAtomRoomId = useSetRoomId();
 
-  const [roomId, setRoomId] = React.useState("");
-  const [username, setUsername] = React.useState("");
+  const [roomId, setRoomId] = useState("");
+  const [username, setUsername] = useState("");
 
-  React.useEffect(() => {
+  const router = useRouter();
+
+  useEffect(() => {
     document.body.style.backgroundColor = "white";
   }, []);
 
-  const handleJoinedRoom = (roomIdFromServer: string, failed?: boolean) => {
-    if (!failed) {
-      setAtomRoomId(roomIdFromServer);
-      router.push(roomIdFromServer);
-    } else {
-      openModal(<NotFoundModal id={roomId} />);
-    }
-  };
-
-  React.useEffect(() => {
+  useEffect(() => {
     socket.on("created", (roomIdFromServer) => {
+      debugger
       setAtomRoomId(roomIdFromServer);
       router.push(roomIdFromServer);
     });
+
+    const handleJoinedRoom = (roomIdFromServer: string, failed?: boolean) => {
+      if (!failed) {
+        setAtomRoomId(roomIdFromServer);
+        router.push(roomIdFromServer);
+      } else {
+        openModal(<NotFoundModal id={roomId} />);
+      }
+    };
 
     socket.on("joined", handleJoinedRoom);
 
@@ -42,16 +46,17 @@ export function Home(props: IHomeProps) {
     };
   }, [openModal, roomId, router, setAtomRoomId]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     socket.emit("leave_room");
     setAtomRoomId("");
   }, [setAtomRoomId]);
 
   const handleCreateRoom = () => {
+    debugger
     socket.emit("create_room", username);
   };
 
-  const handleJoinRoom = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleJoinRoom = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (roomId) socket.emit("join_room", roomId, username);
@@ -113,4 +118,6 @@ export function Home(props: IHomeProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
