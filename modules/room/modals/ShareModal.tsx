@@ -16,7 +16,7 @@ const ShareModal = () => {
   const handleCopy = () => navigator.clipboard.writeText(url);
 
   return (
-    <div className="relative flex flex-col items-center rounded-md bg-white p-10 pt-5">
+    <div className="relative flex flex-col items-center rounded-md bg-slate-950 p-10 pt-5">
       <button onClick={closeModal} className="absolute top-5 right-5">
         <AiOutlineClose />
       </button>

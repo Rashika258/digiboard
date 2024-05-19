@@ -52,7 +52,7 @@ const Chat = () => {
       transition={{ ease: DEFAULT_EASE, duration: 0.2 }}
     >
       <button
-        className="flex w-full cursor-pointer items-center justify-between bg-zinc-900 py-2 px-10 font-semibold text-white"
+        className="flex w-full cursor-pointer items-center justify-between bg-[#F6F5F5] py-2 px-10 font-semibold text-black"
         onClick={() => {
           setOpened((prev) => !prev);
           setNewMsg(false);
@@ -75,7 +75,7 @@ const Chat = () => {
           <FaChevronDown />
         </motion.div>
       </button>
-      <div className="flex flex-1 flex-col justify-between bg-white p-3">
+      <div className="flex flex-1 flex-col justify-between bg-[#04364A] p-3">
         <div className="h-[190px] overflow-y-scroll pr-2" ref={msgList}>
           {msgs.map((msg) => (
             <Message key={msg.id} {...msg} />

@@ -61,13 +61,18 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center py-24">
+    <div className="flex flex-col items-center py-24 h-screen">
       <h1 className="sm:text-extra text-5xl font-extrabold leading-tight">
         Collabio
       </h1>
       <h3 className="text-xl sm:text-2xl">Collaborative digital whiteboard</h3>
 
-      <div className="mt-10 flex flex-col gap-2">
+<div className="w-[500px] flex flex-col">
+<form
+        className="flex flex-col items-center gap-3 w-[100%]"
+        onSubmit={handleJoinRoom}
+      >
+<div className=" w-[100%] mt-10 flex flex-col gap-2">
         <label className="self-start font-bold leading-tight">
           Enter your name
         </label>
@@ -78,15 +83,8 @@ const Home = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value.slice(0, 15))}
         />
-      </div>
-
-      <div className="my-8 h-px w-96 bg-zinc-200" />
-
-      <form
-        className="flex flex-col items-center gap-3"
-        onSubmit={handleJoinRoom}
-      >
-        <label htmlFor="room-id" className="self-start font-bold leading-tight">
+      
+      <label htmlFor="room-id" className="self-start font-bold leading-tight">
           Enter room id
         </label>
         <input
@@ -96,9 +94,16 @@ const Home = () => {
           value={roomId}
           onChange={(e) => setRoomId(e.target.value)}
         />
-        <button className="btn" type="submit">
+      </div>
+
+
+  
+   <div className="w-[100%] mt-4">
+   <button className="btn" type="submit">
           Join
         </button>
+   </div>
+
       </form>
 
       <div className="my-8 flex w-96 items-center gap-2">
@@ -109,11 +114,16 @@ const Home = () => {
 
       <div className="flex flex-col items-center gap-2">
         <h5 className="self-start font-bold leading-tight">Create new room</h5>
-
+<div className="w-[100%]">
         <button className="btn" onClick={handleCreateRoom}>
           Create
         </button>
+        </div>
       </div>
+
+</div>
+
+
     </div>
   );
 };

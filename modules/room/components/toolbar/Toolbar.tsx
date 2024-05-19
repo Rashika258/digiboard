@@ -62,7 +62,7 @@ const ToolBar = () => {
   return (
     <>
       <motion.button
-        className="btn-icon absolute bottom-1/2 -left-2 z-50 h-10 w-10 rounded-full bg-black text-2xl transition-none lg:hidden"
+        className="btn-icon absolute -left-2 bottom-1/2 z-50 h-10 w-10 rounded-full bg-black text-2xl transition-none lg:hidden"
         animate={{ rotate: opened ? 0 : 180 }}
         transition={{ duration: 0.2, ease: DEFAULT_EASE }}
         onClick={() => setOpened(!opened)}
@@ -70,7 +70,7 @@ const ToolBar = () => {
         <FiChevronRight />
       </motion.button>
       <motion.div
-        className="absolute left-10 top-[50%] z-50 grid grid-cols-2 items-center gap-5 rounded-lg bg-zinc-900 p-5 text-white 2xl:grid-cols-1"
+        className="absolute left-10 top-[50%] z-50 grid grid-cols-2 items-center gap-5 rounded-lg bg-slate-500 p-5 text-white 2xl:grid-cols-1"
         animate={{
           x: opened ? 0 : -160,
           y: "-50%",

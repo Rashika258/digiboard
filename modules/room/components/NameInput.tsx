@@ -62,8 +62,9 @@ const NameInput = () => {
       <h1 className="text-5xl font-extrabold leading-tight sm:text-extra">
         Collabio
       </h1>
-      <h3 className="text-xl sm:text-2xl">Real-time whiteboard</h3>
+      <h3 className="text-xl sm:text-2xl">Collaborative digital whiteboard</h3>
 
+      <div className="w-[500px] flex flex-col">
       <div className="mt-10 mb-3 flex flex-col gap-2">
         <label className="self-start font-bold leading-tight">
           Enter your name
@@ -76,10 +77,11 @@ const NameInput = () => {
           onChange={(e) => setName(e.target.value.slice(0, 15))}
         />
       </div>
-
-      <button className="btn" type="submit">
+      </div>
+      <button className="btn mt-5" type="submit">
         Enter room
       </button>
+     
     </form>
   );
 };

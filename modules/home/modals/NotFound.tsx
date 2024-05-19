@@ -10,7 +10,7 @@ export function NotFoundModal({ id }: INotFoundModalProps) {
   const { closeModal } = useModal();
 
   return (
-    <div className="relative flex flex-col items-center rounded-md bg-white p-10 ">
+    <div className="relative flex flex-col items-center rounded-md bg-slate-900 p-10 ">
       <button onClick={closeModal} className="absolute top-5 right-5">
         <AiOutlineClose />
       </button>

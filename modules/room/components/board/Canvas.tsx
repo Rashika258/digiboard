@@ -67,13 +67,14 @@ const Canvas = () => {
   }, [ctx]);
 
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div className="relative h-full w-full overflow-hidden  ">
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] z-10 bg-slate-900"></div>
       <motion.canvas
         // SETTINGS
         ref={canvasRef}
         width={CANVAS_SIZE.width}
         height={CANVAS_SIZE.height}
-        className={`absolute top-0 z-10 ${dragging && "cursor-move"}`}
+        className={`absolute top-0 z-50 text-white ${dragging && "cursor-move"}`}
         style={{ x, y }}
         // DRAG
         drag={dragging}
