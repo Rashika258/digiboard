@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply font-openSans font-medium focus:outline-none focus:ring focus:ring-red-500;
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -10,20 +15,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    /* --foreground-rgb: 255, 255, 255; */
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  height:100vh;
+  background-color: #001C30;
+  color: #fff;
 }
 
 @layer utilities {
@@ -31,3 +32,89 @@ body {
     text-wrap: balance;
   }
 }
+
+
+@layer components {
+  .btn-icon {
+    @apply flex h-7 w-7 items-center justify-center rounded-md text-xl text-white transition-all hover:scale-125 active:scale-100 disabled:opacity-25;
+  }
+
+  .btn {
+    @apply rounded-xl bg-black p-5 py-1 text-white transition-all hover:scale-105 active:scale-100;
+  }
+
+  .input {
+    @apply rounded-xl border p-5 py-1;
+  }
+
+  .overflow-overlay {
+    overflow-y: scroll;
+    overflow-y: overlay;
+  }
+}
+
+.drag {
+  cursor: grab;
+}
+
+
+
+#__next,
+#portal {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-y: overlay;
+}
+
+#portal {
+  z-index: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+*::-webkit-scrollbar {
+  width: 6px !important;
+  position: absolute;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-black/75;
+}
+

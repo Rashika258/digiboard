@@ -7,8 +7,6 @@ import { useModal } from "@/common/recoil/modal";
 import { useSetRoomId } from "@/common/recoil/room";
 import { NotFoundModal } from "../modals/NotFound";
 
-
-
 const Home = () => {
   const { openModal } = useModal();
   const setAtomRoomId = useSetRoomId();
@@ -18,13 +16,13 @@ const Home = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    document.body.style.backgroundColor = "white";
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.backgroundColor = "white";
+  // }, []);
 
   useEffect(() => {
     socket.on("created", (roomIdFromServer) => {
-      debugger
+      debugger;
       setAtomRoomId(roomIdFromServer);
       router.push(roomIdFromServer);
     });
@@ -52,7 +50,7 @@ const Home = () => {
   }, [setAtomRoomId]);
 
   const handleCreateRoom = () => {
-    debugger
+    debugger;
     socket.emit("create_room", username);
   };
 
@@ -64,10 +62,10 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center py-24">
-      <h1 className="text-5xl font-extrabold leading-tight sm:text-extra">
-        Digiboard
+      <h1 className="sm:text-extra text-5xl font-extrabold leading-tight">
+        Collabio
       </h1>
-      <h3 className="text-xl sm:text-2xl">Real-time whiteboard</h3>
+      <h3 className="text-xl sm:text-2xl">Collaborative digital whiteboard</h3>
 
       <div className="mt-10 flex flex-col gap-2">
         <label className="self-start font-bold leading-tight">

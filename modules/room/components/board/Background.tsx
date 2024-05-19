@@ -19,7 +19,7 @@ const Background = ({ bgRef }: { bgRef: RefObject<HTMLCanvasElement> }) => {
       ctx.fillRect(0, 0, CANVAS_SIZE.width, CANVAS_SIZE.height);
 
       document.body.style.backgroundColor =
-        bg.mode === "dark" ? "#222" : "#fff";
+        bg.mode === "dark" ? "#001C30" : "#001C30";
 
       if (bg.lines) {
         ctx.lineWidth = 1;

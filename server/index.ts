@@ -18,10 +18,6 @@ nextApp.prepare().then(async () => {
 
   const io = new Server<ClientToServerEvents, ServerToClientEvents>(server);
 
-  app.get("/health", async (_, res) => {
-    res.send("Healthy");
-  });
-
   const rooms = new Map<string, Room>();
 
   const addMove = (roomId: string, socketId: string, move: Move) => {
