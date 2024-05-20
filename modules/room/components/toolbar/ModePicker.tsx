@@ -10,6 +10,9 @@ const ModePicker = () => {
   const [options, setOptions] = useOptions();
   const { clearSelection } = useSetSelection();
 
+  console.log('options======', options);
+  
+
   useEffect(() => {
     clearSelection();
 
@@ -19,8 +22,8 @@ const ModePicker = () => {
   return (
     <>
       <button
-        className={`btn-icon text-xl ${
-          options.mode === "draw" && "bg-green-400"
+        className={`btn-icon text-xl h-[40px] w-[40px] ${
+          options.mode === "draw" && "bg-blue-950"
         }`}
         onClick={() => {
           setOptions((prev) => ({
@@ -33,8 +36,8 @@ const ModePicker = () => {
       </button>
 
       <button
-        className={`btn-icon text-xl ${
-          options.mode === "eraser" && "bg-green-400"
+        className={`btn-icon text-xl h-[40px] w-[40px] ${
+          options.mode === "eraser" && "bg-blue-950"
         }`}
         onClick={() => {
           setOptions((prev) => ({
@@ -47,8 +50,8 @@ const ModePicker = () => {
       </button>
 
       <button
-        className={`btn-icon text-2xl ${
-          options.mode === "select" && "bg-green-400"
+        className={`btn-icon text-2xl h-[40px] w-[40px] ${
+          options.mode === "select" && "bg-blue-950"
         }`}
         onClick={() => {
           setOptions((prev) => ({

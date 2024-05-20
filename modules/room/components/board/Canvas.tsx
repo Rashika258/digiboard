@@ -42,6 +42,8 @@ const Canvas = () => {
   // SETUP
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
+      console.log('e============', e);
+      
       setDragging(e.ctrlKey);
     };
 
@@ -74,7 +76,7 @@ const Canvas = () => {
         ref={canvasRef}
         width={CANVAS_SIZE.width}
         height={CANVAS_SIZE.height}
-        className={`absolute top-0 z-50 text-white ${dragging && "cursor-move"}`}
+        className={`absolute top-0 z-30 text-white ${dragging && "cursor-move"}`}
         style={{ x, y }}
         // DRAG
         drag={dragging}
@@ -103,12 +105,12 @@ const Canvas = () => {
           handleDraw(e.changedTouches[0].clientX, e.changedTouches[0].clientY)
         }
       />
-      <Background bgRef={bgRef} />
+      {/* <Background bgRef={bgRef} /> */}
 
       <MiniMap dragging={dragging} />
       <button
         className={`absolute bottom-14 right-5 z-10 rounded-xl md:bottom-5 ${
-          dragging ? "bg-green-500" : "bg-zinc-300 text-black"
+          dragging ? "bg-blue-950" : "bg-zinc-300 text-black"
         } p-3 text-lg text-white`}
         onClick={() => setDragging((prev) => !prev)}
       >

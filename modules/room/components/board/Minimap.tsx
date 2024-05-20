@@ -64,7 +64,7 @@ const MiniMap = ({ dragging }: { dragging: boolean }) => {
 
   return (
     <div
-      className="absolute right-10 top-10 z-30 overflow-hidden rounded-lg shadow-lg"
+      className="absolute bg-white text-black right-10 top-10  overflow-hidden rounded-lg shadow-lg z-50"
       style={{
         width: CANVAS_SIZE.width / divider,
         height: CANVAS_SIZE.height / divider,
